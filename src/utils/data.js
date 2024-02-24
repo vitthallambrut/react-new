@@ -1,4 +1,4 @@
-const resArr = [
+let resArr = [
     {
     "info": {
     "id": "253596",
