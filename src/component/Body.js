@@ -3,13 +3,15 @@ import resArr from "../utils/data";
 import { useState } from "react";
 
 
-//local state variable
+
 
 //normal js variable
 // const resArr = []
 
 const Body = () => {
+    //local state variable
     let [restaurantsList, setList] = useState(resArr)
+    // console.log(setList(restaurantsList))
     return (
         <div className="body">
             <div className="search">
