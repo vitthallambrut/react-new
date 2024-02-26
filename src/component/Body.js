@@ -1,5 +1,4 @@
 import RestaurantCard from "./RestaurantCard";
-import resArr from "../utils/data";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
 
@@ -12,6 +11,9 @@ import Shimmer from "./shimmer";
 const Body = () => {
     //local state variable
     let [restaurantsList, setList] = useState([]);
+
+    let [searchText, setSearchText] = useState("");
+
     useEffect(()=>{
         fetchData();
     },[]); // it acceept two arguments first one is callback function and second one is dependency array
@@ -30,14 +32,24 @@ const Body = () => {
         
         
     }
-
-    if(restaurantsList == 0){
-        return <Shimmer/>
-    }
-
-    return (
+    //conditional rendering
+    return restaurantsList == 0 ? <Shimmer/> : (
         <div className="body">
-            <div className="search">
+            <div className="filter">
+                <div className="search">
+                    <input type="text" className="search-box" value={searchText} onChange={(e)=>setSearchText(e.target.value)}/>
+                    <button onClick={()=>{
+                        //filter the cards and update the UI
+                        //need search text
+                        // setSearchText(searchText)
+                        let filterRes = restaurantsList.filter((res)=>{
+                            return res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                        });
+                        if(filterRes){
+                            setList(filterRes);
+                        }
+                    }}>Search</button>
+                </div>
                 <button onClick={()=>{ 
                   const filteredlist = restaurantsList.filter(
                     (res)=> res.info.avgRating > 4

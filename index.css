@@ -47,9 +47,9 @@
     padding-top: 3px;
     border-radius: 10px;       
 }
-.search{
+/* .search{
     padding: 10px;
-}
+} */
 .res-container{
     margin-left: 50px;
     display: flex;
@@ -101,6 +101,19 @@ h5 {
   }
 
   button{
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .login-btn{
     padding: 10px;
+    cursor: pointer;
+  }
+
+  .filter{
+    display: flex;
+  }
+  .search-box{
+    margin-left: 100px;
   }
   
