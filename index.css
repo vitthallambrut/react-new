@@ -17,7 +17,6 @@
 .nav-item > ul {
     font-size: 19px;
     display: flex;
-    
     list-style-type: none;
 }
 
@@ -25,6 +24,9 @@
     padding: 10px;
     margin: 10px;
 } 
+.nav-item ul li a {
+  text-decoration: none;
+}
 
 .res-card {
     width: 200px;
@@ -53,9 +55,11 @@
 .res-container{
     margin-left: 50px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;   
 }
-
+.res-container a{
+  text-decoration: none;
+}
 h5 {
     background-color: rgb(76, 212, 76);
     padding: 2px; 
@@ -115,5 +119,10 @@ h5 {
   }
   .search-box{
     margin-left: 100px;
+  }
+
+  .user-card{
+    border: 1px solid ;
+    padding: 10px;
   }
   
