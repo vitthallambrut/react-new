@@ -9,12 +9,14 @@ class UserClass extends React.Component {
         this.state = {   //reserve variable
             userInfo : {}
         }
+        console.log("constructor called ")
     }
 
     async componentDidMount(){
+        console.log("component Did Mount")
         const data = await fetch("https://api.github.com/users/vitthallambrut");
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         this.setState({
             userInfo:json
         })
@@ -29,9 +31,9 @@ class UserClass extends React.Component {
     }
 
     render(){
-
+        console.log("render called ")
         // const {name} = this.props;
-        console.log(this.state.userInfo.name)
+        // console.log(this.state.userInfo.name)
         const {name, location, avatar_url} = this.state.userInfo;
 
         return (
