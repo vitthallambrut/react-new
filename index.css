@@ -124,5 +124,10 @@ h5 {
   .user-card{
     border: 1px solid ;
     padding: 10px;
+    margin: 5px;
+  }
+  .user-card img {
+    width: 70px;
+    height: 70px;
   }
   
